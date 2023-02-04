@@ -7,6 +7,8 @@
   --primary-light-color: #ffffff;
   --secondary-text-color: #757575;
   --primary-backround-color: #f5f4fa;
+  --secondary-border-color: #ececec;
+  --portfolio-projects-border: #eeeeee;
 }
 
 *,
@@ -20,6 +22,10 @@
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
+}
+
+header {
+  border-bottom: 1px solid var(--secondary-border-color);
 }
 
 .header {
@@ -266,6 +272,9 @@ h2 {
 .ourteam .container ul li {
   margin-right: 30px;
   background-color: var(--primary-light-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .address {
@@ -332,12 +341,16 @@ a {
   color: var(--primary-text-color);
   line-height: calc(36 / 18);
   font-size: 18px;
+  letter-spacing: 0.06em;
+  margin-left: 20px;
 }
+
 .apps1 {
   font-weight: 400;
   font-size: 16px;
   color: var(--secondary-text-color);
   line-height: calc(30 / 16);
+  margin-left: 20px;
 }
 .bottom-footer {
   font-weight: 400;
@@ -358,9 +371,45 @@ a {
   font-size: 16px;
   line-height: calc(26 / 16);
   letter-spacing: 0.03em;
+  padding: 6px 25px 6px 25px;
+  height: 38px;
+  border-radius: 4px;
 }
 .my-button:hover,
 .my-button:focus {
   background-color: var(--accent-blue);
   color: var(--primary-light-color);
+}
+
+.active-button-all {
+  background-color: var(--accent-blue);
+  color: var(--primary-light-color);
+}
+
+.portfolio-section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.portfolio-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-buttons > li {
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.portfolio-projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 0px;
+}
+
+.portfolio-projects li {
+  background-color: var(--primary-light-color);
+  border: 1px solid var(--portfolio-projects-border);
+  margin-top: 30px;
 }

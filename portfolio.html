@@ -13,26 +13,26 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header class="header">
+    <header>
+      <div class="container header">
       <a class="logo" href="index.html">WebStudio</a>
       <nav class="header-navbar">
         <ul>
           <li>
-            <a class="navbar-navlink" href="index.html">Studio</a>
+           <a class="navbar-navlink" href="index.html">Studio</a>
           </li>
           <li>
-            <a class="navbar-portfolio active" href="portfolio.html"
-              >Portfolio</a
-            >
+            <a class="navbar-navlink navbar-portfolio active" href="portfolio.html">Portfolio</a>
           </li>
           <li>
             <a class="navbar-navlink" href="contacts.html">Contacts</a>
           </li>
         </ul>
       </nav>
-      <ul>
+
+      <ul class="header-contact">
         <li>
-          <a class="info-navlink" href="mailto:info@devstudio.com"
+          <a class="info-navlink active" href="mailto:info@devstudio.com"
             >info@devstudio.com</a
           >
         </li>
@@ -40,11 +40,14 @@
           <a class="info-navlink" href="tel:+380961111111">+38 096 111 11 11</a>
         </li>
       </ul>
+    </div>
     </header>
     <main>
-      <ul>
+      <section class="portfolio-section">
+        <div class="container">
+      <ul class="portfolio-buttons">
         <li>
-          <button type="button" class="my-button">All</button>
+          <button type="button" class="my-button active-button-all">All</button>
         </li>
         <li>
           <button type="button" class="my-button">Web-sites</button>
@@ -60,7 +63,7 @@
         </li>
       </ul>
 
-      <ul>
+      <ul class="portfolio-projects">
         <li>
           <img
             src="images/laptop.jpg"
@@ -131,8 +134,11 @@
           <p class="apps1">Apps</p>
         </li>
       </ul>
+    </div>
+    </section>
     </main>
     <footer class="footer">
+      <div class="container">
       <a class="logo" href="index.html">WebStudio</a>
       <address class="address">
         <ul>
@@ -150,6 +156,7 @@
           </li>
         </ul>
       </address>
+    </div>
     </footer>
   </body>
 </html>
