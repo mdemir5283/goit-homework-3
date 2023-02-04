@@ -9,24 +9,33 @@
   --primary-backround-color: #f5f4fa;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
 }
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 80px;
 }
+
 .header-navbar ul {
   display: flex;
-  padding: 15px;
-  margin: 0;
 }
-.header-navbar > ul li:not(:last-child) {
-  margin-right: 10px;
+.header-navbar ul > li:first-child,
+.header-navbar ul > li:nth-child(2) {
+  margin-right: 53px;
 }
+
 .header-navbar .navbar-navlink {
   display: block;
   padding: 10px;
@@ -43,7 +52,16 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 600px;
 }
+
+.hero-section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   font-family: "Roboto";
   font-style: normal;
@@ -86,9 +104,6 @@ h1 {
   font-weight: 700;
   font-size: 16px;
   line-height: calc(30 / 16);
-  display: flex;
-  align-items: center;
-  text-align: center;
   letter-spacing: 0.06em;
   border: none;
   color: var(--primary-light-color);
@@ -98,6 +113,7 @@ h1 {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   padding: 10px 20px;
 }
+
 .btn-service:hover,
 .btn-service:focus {
   cursor: pointer;
@@ -121,7 +137,23 @@ h1 {
   font-size: 14px;
   color: var(--primary-text-color);
   line-height: calc(16 / 14);
+
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
+
+.header-contact {
+  display: flex;
+  margin-left: auto;
+}
+
+.header-contact > li:first-child {
+  margin-right: 50px;
+}
+
 .navbar-studio,
 .navbar-portfolio {
   color: var(--accent-blue);
@@ -133,17 +165,16 @@ h1 {
 
 .logo {
   font-family: "Raleway";
-
   font-weight: 700;
   font-size: 26px;
   color: var(--accent-blue);
   text-decoration: none;
   line-height: calc(31 / 26);
-  position: absolute;
-  width: 145px;
-  height: 31px;
-  left: 215px;
-  top: 24px;
+
+  letter-spacing: 0.03em;
+  padding-top: 24px;
+  padding-bottom: 25px;
+  margin-right: 97px;
 }
 .info-navlink {
   list-style: none;
@@ -151,7 +182,11 @@ h1 {
   line-height: calc(16 / 14);
   font-weight: 500;
   font-size: 14px;
+  letter-spacing: 0.02em;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
+
 .body-section p {
   color: var(--secondary-text-color);
   font-weight: 400;
