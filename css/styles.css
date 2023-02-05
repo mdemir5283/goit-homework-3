@@ -10,7 +10,19 @@
   --secondary-border-color: #ececec;
   --portfolio-projects-border: #eeeeee;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 *,
 *::before,
 *::after {
@@ -44,7 +56,7 @@ header {
 
 .header-navbar .navbar-navlink {
   display: block;
-  padding: 10px;
+  padding: 32px 10px 32px 10px;
 }
 
 a:hover {
@@ -58,7 +70,7 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 600px;
+  padding: 200px 0;
 }
 
 .hero-section .container {
@@ -73,7 +85,6 @@ body {
   font-style: normal;
 }
 h1 {
-  text-align: center;
   margin-bottom: 30px;
   font-weight: 900;
   text-transform: uppercase;
@@ -86,12 +97,6 @@ h1 {
 .btn-service11:hover,
 :focus {
   color: var(--accent-blue);
-}
-.btn-service,
-.btn-for-all:hover,
-:focus {
-  color: var(--accent-blue);
-  text-color: var(--primary-light-color);
 }
 
 .btn-for-all {
@@ -111,7 +116,6 @@ h1 {
   font-size: 16px;
   line-height: calc(30 / 16);
   letter-spacing: 0.06em;
-  border: none;
   color: var(--primary-light-color);
   cursor: pointer;
   border-radius: 4px;
@@ -124,7 +128,8 @@ h1 {
 .btn-service:focus {
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  color: var(--primary-light-color);
+  color: var(--hero-color);
+  background-color: var(--secondary-border-color);
 }
 
 .btn-service11 {
@@ -209,8 +214,11 @@ h1 {
   display: flex;
 }
 
-.body-section .container ul li {
+.list-item {
   width: 270px;
+}
+
+.list-item:not(:last-child) {
   margin-right: 30px;
 }
 
@@ -227,6 +235,7 @@ h2 {
   font-weight: 700;
   color: var(--primary-text-color);
   line-height: calc(16 / 14);
+  margin-bottom: 9px;
 }
 
 .whatwedo {
@@ -238,7 +247,7 @@ h2 {
   margin-top: 50px;
 }
 
-.whatwedo .container ul li {
+.whatwedo-list:not(:last-child) {
   margin-right: 30px;
 }
 .sub-heading {
@@ -248,6 +257,7 @@ h2 {
   line-height: calc(19 / 16);
   font-size: 16px;
   margin-top: 30px;
+  margin-bottom: 10px;
 }
 .ourteam-text {
   text-align: center;
@@ -269,12 +279,15 @@ h2 {
   margin-top: 50px;
 }
 
-.ourteam .container ul li {
-  margin-right: 30px;
+.ourteam-list {
   background-color: var(--primary-light-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+}
+
+.ourteam-list:not(:last-child) {
+  margin-right: 30px;
 }
 
 .address {
@@ -285,6 +298,11 @@ h2 {
   font-size: 14px;
   font-family: "roboto";
 }
+
+.address ul li {
+  margin-bottom: 2px;
+}
+
 .footer {
   background: var(--hero-color);
   font-weight: 400;
@@ -298,15 +316,13 @@ h2 {
 }
 .footer-logo {
   font-family: "Raleway";
-
   font-weight: 700;
   font-size: 26px;
   color: var(--accent-blue);
   text-decoration: none;
   line-height: calc(31 / 26);
-
-  width: 145px;
-  height: 31px;
+  margin-bottom: 9px;
+  display: block;
 }
 
 ul {
@@ -327,7 +343,7 @@ a {
   line-height: calc(16 / 14);
 }
 
-.address ul li a {
+.bottom-footer-address {
   font-weight: 400;
   color: var(--primary-light-color);
   line-height: calc(24 / 14);
@@ -342,7 +358,6 @@ a {
   line-height: calc(36 / 18);
   font-size: 18px;
   letter-spacing: 0.06em;
-  margin-left: 20px;
 }
 
 .apps1 {
@@ -350,11 +365,11 @@ a {
   font-size: 16px;
   color: var(--secondary-text-color);
   line-height: calc(30 / 16);
-  margin-left: 20px;
+  margin-top: 4px;
 }
 .bottom-footer {
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--secondary-text-color);
   line-height: calc(24 / 14);
   font-size: 14px;
   font-style: normal;
@@ -394,22 +409,31 @@ a {
 .portfolio-buttons {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
-.portfolio-buttons > li {
-  margin-right: 10px;
-  margin-bottom: 20px;
+.portfolio-buttons > li:not(:last-child) {
+  margin-right: 8px;
 }
 
 .portfolio-projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-left: 0px;
 }
 
 .portfolio-projects li {
   background-color: var(--primary-light-color);
-  border: 1px solid var(--portfolio-projects-border);
-  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.portfolio-projects li img {
+  display: block;
+}
+
+.portfolio-text-div {
+  border-left: 1px solid var(--portfolio-projects-border);
+  border-right: 1px solid var(--portfolio-projects-border);
+  border-bottom: 1px solid var(--portfolio-projects-border);
+  padding: 20px 24px;
 }
