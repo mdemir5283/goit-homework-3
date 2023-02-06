@@ -424,6 +424,10 @@ a {
 
 .portfolio-projects li {
   background-color: var(--primary-light-color);
+  margin-bottom: 30px;
+}
+.portfolio-projects > li:nth-child(n + 7) {
+  margin-bottom: 0px;
 }
 
 .portfolio-projects li img {
